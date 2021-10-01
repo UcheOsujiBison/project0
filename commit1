@@ -1,0 +1,5 @@
+#PROGRAM: Hello, World!
+
+  .data
+ out_string:
+  .asciiz "\nHello, World!\n"
