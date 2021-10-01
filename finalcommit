@@ -1,18 +1,18 @@
 #PROGRAM: Hello, World!
 
-  .data
+  .data  #Data declaration section
  out_string:
-  .asciiz "\nHello, World!\n"
-  .text
+  .asciiz "\nHello, World!\n" 
+  .text #Assembly language instructions
  
- main:
-  li $v0, 4
-  la $a0, out_string
-  syscall
+ main: #Start of code section
+  li $v0, 4 #System call code for printing string = 4
+  la $a0, out_string #Load address of string to be printed into $a0
+  syscall #Call operating system to perform operation in $v0
   
-  lb $t1, 2($a0)
-  addi $t1, t2, -32
-  sb $t1, 2($a0)
-  syscall
+  lb $t1, 2($a0) #Read 'e' (the ASCII code) from memory
+  addi $t1, t2, -32  #Change its ASCII code to 'E'
+  sb $t1, 2($a0)  #Write the new ASCII code to memory
+  syscall #Print the string again
   li $v0, 10
-  syscall
+  syscall #Exit Program
